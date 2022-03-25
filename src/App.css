@@ -1,38 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Saira+Condensed:wght@700&display=swap');
+
+:root {
+  --key-background: rgb(109,112,113);
+  --correct-letter: rgb(68,125,61);
+  --wrong-position: #a5902d;
+  --wrong-letter:rgb(44,44,46);
+  --body-background: rgb(15,15,16);
+}
+
+
+/* 
+font-family: 'nyt-karnakcondensed';
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Saira Condensed', sans-serif;
+}
+
 .App {
+  display: grid;
+  place-items: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(15,15,16);
+}
+
+.title__container {
+  width: 100vw;
   text-align: center;
+  border-bottom: 1px solid rgb(39, 39, 41);
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-size: 3rem;
+  letter-spacing: 0.01em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board {
+  width: 350px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 2em auto;
+  gap: .5em;
+}
+
+.board__row {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+}
+
+.board__cell {
+  border: 2px solid rgb(39, 39, 41);
+  height: 100%;
+  flex: 1;
   color: white;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.keyboard {
+  width: 600px;
+  height:  250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: .5em 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.keyboard__row {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4em;
 }
+
+.keyboard__row > * {
+  color: white;
+  border: 1px solid red;
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 55px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  background: var(--key-background);
+  border: none;
+  outline: none;
+}
+
+
+.key:hover {
+  cursor: pointer;
+  background: #b9b9b9;
+}
+
+#big {
+  width: 80px;
+  color: white;
+  display: grid;
+  place-items: center;
+  height: 55px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  background: var(--key-background);
+  border: none;
+  outline: none;
+}
+
+#big:hover {
+  cursor: pointer;
+  background: #b9b9b9;
+}
+
+.key {
+  width: 45px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+}
+
+.gameOver__container {
+  width: 500px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  color: white;
+  border: 1px solid white;
+  margin: 2em;
+  font-size: 2rem;
+  z-index: 3;
+  position: absolute;
+  background: rgba(0,0,0, 0.9);
+}
+
+.gameOver__result {
+  background: rgba(0,0,0, 0.3);
+}
+
+#correct {
+  background-color: var(--correct-letter);
+}
+
+#almost {
+  background-color: var(--wrong-position);
+}
+
+#error {
+  background-color: var(--wrong-letter);
+}
+
+#disabled {
+  background-color: var(--wrong-letter);
+}
+
