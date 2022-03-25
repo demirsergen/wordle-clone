@@ -16,6 +16,8 @@ function App() {
   const [wordSet, setWordSet] = useState(new Set())
   const [todaysWord, setTodaysWord] = useState('');
   const [disabledLetters, setDisabledLetters] = useState([]);
+  const [correctLetters, setCorrectLetters] = useState([]);
+  const [almostLetters, setAlmostLetters] = useState([]);
 
 
     useEffect(() => {
@@ -72,7 +74,7 @@ function App() {
         <h1 className='title'>Wordle</h1>
       </div>
       
-      <context.Provider value={{board, setBoard, currentAttempt, setCurrentAttempt, isWin, setIsWin, isLose, setIsLose, onEnter,onDelete, onSelectLetter,todaysWord, disabledLetters, setDisabledLetters }}>
+      <context.Provider value={{board, setBoard, currentAttempt, setCurrentAttempt, isWin, setIsWin, isLose, setIsLose, onEnter,onDelete, onSelectLetter,todaysWord, disabledLetters, setDisabledLetters, correctLetters, setCorrectLetters,almostLetters, setAlmostLetters  }}>
         <Board />
         <Keyboard />
         <GameOver />

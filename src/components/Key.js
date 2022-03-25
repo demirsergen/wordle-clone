@@ -3,7 +3,7 @@ import { context } from '../App';
 
 
 
-const Key = ({keyVal, bigKey, disabled}) => {
+const Key = ({keyVal, bigKey, disabled, almost, correct}) => {
     const { onDelete, onEnter, onSelectLetter} = useContext(context);
     
 
@@ -22,7 +22,7 @@ const Key = ({keyVal, bigKey, disabled}) => {
     <div 
     onClick={selectLetter} 
     className='key' 
-    id={bigKey ? 'big' : disabled === true && 'disabled'}>
+    id={bigKey ? 'big' : disabled === true ? 'disabled' : correct === true ? 'correct' : almost === true && 'almost'}>
         {keyVal}
     </div>
   )

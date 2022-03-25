@@ -4,7 +4,7 @@ import { context } from '../App';
 
 const Keyboard = () => {
 
-    const {onSelectLetter, onDelete, onEnter, isWin, isLose, disabledLetters} = useContext(context);
+    const {onSelectLetter, onDelete, onEnter, isWin, isLose, disabledLetters, correctLetters, almostLetters} = useContext(context);
 
     const firstRow = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
     const secondRow = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
@@ -48,14 +48,14 @@ const Keyboard = () => {
   return (
     <div className='keyboard' onKeyDown={handleKeyboard}>
         <div className='keyboard__row'>
-            {firstRow.map((letter) => {return <Key keyVal={letter} disabled={disabledLetters.includes(letter) ? true : false}/>})}
+            {firstRow.map((letter) => {return <Key keyVal={letter} disabled={disabledLetters.includes(letter) ? true : false} correct={correctLetters.includes(letter) ? true : false} almost={almostLetters.includes(letter) ? true : false}/>})}
         </div>
         <div className='keyboard__row'>
-            {secondRow.map((letter) => {return <Key keyVal={letter} disabled={disabledLetters.includes(letter) ? true : false }/>})}
+            {secondRow.map((letter) => {return <Key keyVal={letter} disabled={disabledLetters.includes(letter) ? true : false } correct={correctLetters.includes(letter) ? true : false} almost={almostLetters.includes(letter) ? true : false}/>})}
         </div>
         <div className='keyboard__row'>
             <Key keyVal='Enter' bigKey="true"/>
-            {thirdRow.map((letter) => {return <Key keyVal={letter} disabled={disabledLetters.includes(letter) ? true : false}/>})}
+            {thirdRow.map((letter) => {return <Key keyVal={letter} disabled={disabledLetters.includes(letter) ? true : false} correct={correctLetters.includes(letter) ? true : false} almost={almostLetters.includes(letter) ? true : false}/>})}
             <Key keyVal='Delete' bigKey="true"/>
         </div>
     </div>

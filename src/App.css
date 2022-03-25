@@ -183,3 +183,10 @@ body {
   background-color: var(--wrong-letter);
 }
 
+#correct {
+  background-color: var(--correct-letter);
+}
+
+#almost {
+  background-color: var(--wrong-position);
+}
