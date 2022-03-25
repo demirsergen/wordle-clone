@@ -32,7 +32,7 @@ function App() {
         if(word === todaysWord) {
             setIsWin(true);
             return;
-        } else if(currentAttempt.attempt === 4 && word !== todaysWord) {
+        } else if(currentAttempt.attempt >= 4 && word !== todaysWord) {
             setIsLose(true);
             return;
         } else {
