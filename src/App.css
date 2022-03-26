@@ -183,12 +183,20 @@ body {
   place-items: center;
   color: white;
   border: 1px solid white;
-  margin: 2em;
+  margin: 2em auto;
   font-size: 2rem;
   z-index: 3;
   position: absolute;
   background: rgba(0,0,0, 0.9);
 }
+
+@media screen and (max-width: 400px) {
+  .gameOver__container {
+    width: 300px;
+    font-size: 1.5rem;
+  }
+}
+
 
 .gameOver__result {
   background: rgba(0,0,0, 0.3);
