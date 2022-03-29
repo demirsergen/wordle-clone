@@ -32,17 +32,20 @@ function App() {
         if(word === todaysWord) {
             setIsWin(true);
             return;
-        } else if(currentAttempt.attempt >= 4 && word !== todaysWord) {
-            setIsLose(true);
-            return;
         } else {
           if(wordSet.has(word.toLowerCase())) {
             setCurrentAttempt({...currentAttempt, attempt: currentAttempt.attempt + 1, letterPos: 0});
           } else {
             alert("it's not a word!")
+            return;
           }
-        
+          if(currentAttempt.attempt >=5 && word !== todaysWord) {
+            setIsLose(true);
+            return;
+        } 
         }
+        
+       
     }
 
 

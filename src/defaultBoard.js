@@ -6,6 +6,7 @@ export const defaultBoard = [
     ["", "", "", "", ""],
     ["", "", "", "", ""],
     ["", "", "", "", ""],
+    ["", "", "", "", ""],
 ];
 
 export const generateWordSet = async () => {
